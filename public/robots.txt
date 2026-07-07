@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# Disallow thank you and confirmation pages
+Disallow: /signup-thank-you
+Disallow: /thank-you-due-diligence
+
+# Disallow protected/admin areas
+Disallow: /protected
+
+# Allow important pages explicitly
+Allow: /
+Allow: /platform
+Allow: /pricing
+Allow: /legal-consultation
+Allow: /blog
+Allow: /legal-glossary
+Allow: /use-cases
+Allow: /who-we-are
+
+# Sitemap location
+Sitemap: https://sule.io/sitemap.xml
+
+# Crawl delay (optional - adjust as needed)
+Crawl-delay: 1

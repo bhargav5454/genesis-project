@@ -1,0 +1,3386 @@
+/* Import normalize CSS */
+
+
+
+
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap');
+
+/* Minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    display: none;
+    width: 0;
+  }
+  html {
+    scrollbar-width: none;
+  }
+}
+
+/* Base styles */
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  line-height: 1.6;
+  background-color: #FFFEFC;
+  /* Set background color for all pages */
+}
+
+/* DM Serif Display heading font */
+.dm-serif {
+  font-family: 'DM Serif Display', serif;
+  font-weight: 400;
+  /* Regular is the only available weight */
+  color: #000000;
+}
+
+/* Make sure any images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Common layout elements */
+.padding-global {
+  padding: 16px 20px 0 20px;
+}
+
+.padding-section-large {
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
+}
+
+.padding-section-medium {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+/* Responsive heading - wraps on mobile, single line on desktop */
+.responsive-heading {
+  white-space: normal;
+}
+
+@media (min-width: 768px) {
+  .responsive-heading {
+    white-space: nowrap;
+  }
+}
+
+.padding-section-xlarge {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.padding-section-small {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.padding-top {
+  padding-top: 2.5rem;
+}
+
+.padding-bottom {
+  padding-bottom: 2.5rem;
+}
+
+.container-large {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.container-small {
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* Typography */
+.heading-style-h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.heading-style-h2 {
+  font-size: 2.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.heading-style-h3 {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.heading-style-h4 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.heading-style-h5 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.heading-style-h6 {
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.heading-style-h6.is-nav {
+  margin-bottom: 0.25rem;
+}
+
+.text-size-large {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.text-size-medium {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.text-size-regular {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.text-size-small {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.text-size-tiny {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  margin-bottom: 0.25rem;
+}
+
+.text-weight-semibold {
+  font-weight: 600;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.text-color-tertiary {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.text-color-dark-grey {
+  color: #333333;
+}
+
+.text-color-grey {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+/* Buttons - Updated for pill shape, new colors, and fixed height */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  /* Updated from 60px to 56px */
+  padding: 0 1.5rem;
+  background-color: #347AE9;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 9999px;
+  /* Pill shape */
+  font-weight: 500;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.button:hover {
+  background-color: #2867d0;
+  /* Slightly darker shade for hover */
+}
+
+.button.is-small {
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  height: 56px;
+  /* Updated from 60px to 56px */
+}
+
+.button.is-link {
+  background-color: transparent;
+  color: #347AE9;
+  padding: 0;
+  height: auto;
+  /* Exception for link buttons */
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  /* Updated from 60px to 56px */
+  padding: 0 1.5rem;
+  background-color: transparent;
+  color: #347AE9;
+  border: 2px solid #347AE9;
+  text-decoration: none;
+  border-radius: 9999px;
+  /* Pill shape */
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.button-secondary:hover {
+  background-color: rgba(52, 122, 233, 0.05);
+  /* Updated color with opacity */
+}
+
+.button-secondary.is-newsletter {
+  border-color: rgba(52, 122, 233, 0.3);
+  /* Updated color */
+  border-width: 2px;
+  transition: all 0.2s;
+}
+
+.button-secondary.is-newsletter:hover {
+  border-color: #347AE9;
+  /* Updated color */
+  border-width: 2px;
+}
+
+.button-secondary-flexbox {
+  display: flex;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar-scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_component {
+  background-color: #ffffff;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0.75rem;
+  /* Reduced horizontal padding */
+}
+
+.logo {
+  height: 2.5rem;
+  width: auto;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #333333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover {
+  color: #5a45ff;
+}
+
+.navbar-button-wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.menu-button {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar_menu-dropdown {
+  position: relative;
+}
+
+.navbar_dropdwn-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.dropdown-chevron {
+  width: 16px;
+  height: 16px;
+}
+
+.nav-chip-flexbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chip-card {
+  background-color: #347AE9;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  /* Updated to rectangular with rounded corners */
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.navbar_dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  min-width: 16rem;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.navbar_dropdown-content {
+  padding: 1.5rem;
+  background-color: #fff;
+}
+
+.navbar_dropdown-content.shadow-large {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.navbar_dropdown-content.is-resources {
+  min-width: 18rem;
+}
+
+.nav_cta-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.nav_cta-header {
+  margin-bottom: 1rem;
+}
+
+.nav_links-layout {
+  margin-top: 1rem;
+}
+
+.nav_links-wrapper {
+  margin-bottom: 1rem;
+}
+
+.nav_link-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+
+.nav_link-wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.nav_link-image-wrapper {
+  flex-shrink: 0;
+}
+
+.nav_link-image {
+  width: 2rem;
+  height: 2rem;
+}
+
+.nav_link-info {
+  flex-grow: 1;
+}
+
+.nav_divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.nav_heading {
+  margin-bottom: 0.5rem;
+}
+
+.nav_links-component {
+  display: grid;
+  gap: 1rem;
+}
+
+.w-inline-block {
+  display: inline-block;
+  max-width: 100%;
+}
+
+.icon-embed-xsmall {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Special dropdown styling for mobile */
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .nav-menu.is-open {
+    display: flex;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .navbar-button-wrapper {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .navbar_dropdown-list {
+    position: relative;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 0.5rem;
+  }
+
+  .w-nav-overlay {
+    top: 4.5rem !important;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Header section */
+.section_home-header {
+  background-color: #f6f9fc;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-header_component {
+  position: relative;
+}
+
+.home-header_content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.home-header_content-left,
+.home-header_content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-header_image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.home-header_image {
+  width: 100%;
+  max-width: 60rem;
+}
+
+/* Section styles */
+.section {
+  width: 100%;
+  position: relative;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.background-color-floral-s1 {
+  background-color: #f6f9fc;
+}
+
+/* Logos and Marquee */
+.logos-marquee {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+
+.logos-collection {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logos-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.logos-wrapper {
+  padding: 0 1.5rem;
+}
+
+.startup-logo {
+  max-height: 3.5rem;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.startup-logo:hover {
+  opacity: 1;
+}
+
+/* Platform section */
+.section-platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.section-platform-grid-left {
+  order: 1;
+}
+
+.section-platform-grid-right {
+  order: 2;
+}
+
+.section-platform-image {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.no-radius {
+  border-radius: 0;
+}
+
+.section-platform-image.show-desktop {
+  display: block;
+}
+
+.section-platform-image.show-tablet {
+  display: none;
+}
+
+.section_platform-video {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  /* 16:9 aspect ratio */
+  position: relative;
+}
+
+.section_platform-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section-platform_content {
+  margin-bottom: 2rem;
+}
+
+.section-platform_header {
+  margin-bottom: 1.5rem;
+}
+
+/* List component */
+.list_component {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.list_item {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.list_item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+  background-image: url('/images/Tick.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Testimonials */
+.section_testimonials {
+  position: relative;
+}
+
+.testimonials_component {
+  text-align: center;
+}
+
+.testimonial-slider {
+  margin: 3rem auto;
+  max-width: 48rem;
+}
+
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.testimonial-content {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-author-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.testimonial-author-position {
+  color: #666666;
+  font-size: 0.875rem;
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.testimonial-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.testimonial-dot.active {
+  background-color: #5a45ff;
+}
+
+/* Footer styles */
+.footer {
+  background-color: #f6f9fc;
+  padding: 4rem 0;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.footer_header {
+  max-width: 48rem;
+}
+
+.form_component {
+  max-width: 36rem;
+}
+
+.form_form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form_form-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.form_input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.form_input.is-newsletter {
+  border-color: rgba(90, 69, 255, 0.3);
+}
+
+.form_message-success,
+.form_message-error {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.form_message-success {
+  background-color: rgba(52, 211, 153, 0.1);
+  color: #065f46;
+}
+
+.form_message-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #b91c1c;
+}
+
+.footer-divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 3rem 0;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer_logos-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer_altiverse-link {
+  color: #333;
+  transition: color 0.3s;
+}
+
+.footer_altiverse-link:hover {
+  color: #5a45ff;
+}
+
+.footer_altiverse {
+  width: 8rem;
+  height: 1.5rem;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.footer-links-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-link {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #5a45ff;
+}
+
+.footer_ce-logo {
+  height: 3rem;
+  width: auto;
+}
+
+/* Cookie Consent */
+.cookie-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1100;
+  max-width: 30rem;
+}
+
+.cookie-popup_component {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.cookie-modal_component {
+  padding: 1.5rem;
+}
+
+.cookie-modal_content-wrap {
+  margin-bottom: 1.5rem;
+}
+
+.cookie-modal_content-wrap.is-small {
+  margin-bottom: 1rem;
+}
+
+.cookie-modal_title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cookie-modal_title.is-small {
+  font-size: 1.25rem;
+}
+
+.cookie-modal_description {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.text-style-link {
+  color: #5a45ff;
+  text-decoration: none;
+}
+
+.cookie-modal_button-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cookie-modal_button-wrap.is-small {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cookie-modal_button {
+  display: block;
+  padding: 0.75rem 1rem;
+  background-color: #347AE9;
+  /* Updated color */
+  color: #fff;
+  border-radius: 9999px;
+  /* Pill shape */
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cookie-modal_button:hover {
+  background-color: #2867d0;
+  /* Slightly darker shade for hover */
+}
+
+.cookie-modal_button.is-secondary {
+  background-color: transparent;
+  border: 1px solid #347AE9;
+  /* Updated color */
+  color: #347AE9;
+  /* Updated color */
+}
+
+.cookie-modal_button.is-secondary:hover {
+  background-color: rgba(52, 122, 233, 0.05);
+  /* Updated color with opacity */
+}
+
+.cookie-modal_button.is-third {
+  background-color: transparent;
+  color: #347AE9;
+  /* Updated color */
+  border: none;
+}
+
+.cookie-modal_button.is-third:hover {
+  text-decoration: underline;
+}
+
+.cookie-modal_form-wrap {
+  margin-top: 2rem;
+}
+
+.cookie-modal_radio {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.cookie-modal_radio.is--not-allowed {
+  background-color: #f9fafb;
+}
+
+.cookie-modal_radio_button {
+  float: left;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  margin-right: 0.75rem;
+}
+
+.cookie-modal_radio_button.is-always-active {
+  background-color: #5a45ff;
+  border-color: #5a45ff;
+}
+
+.cookie-modal_radio_button.w--redirected-checked {
+  background-color: #5a45ff;
+  border-color: #5a45ff;
+}
+
+.cookie-modal_radio_label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.cookie-modal_radio_label.is--not-allowed {
+  color: #333;
+}
+
+.cookie-modal_radio_description {
+  font-size: 0.875rem;
+  color: rgba(51, 51, 51, 0.7);
+  padding-left: 2rem;
+}
+
+.cookie-modal_radio_description.is--not-allowed {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.cookie-modal_button-wrap.in-pref-manger {
+  margin-top: 2rem;
+}
+
+.cookie-preference_component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+}
+
+.cookie-preference_background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.cookie-preference_wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-modal_form-wrap {
+  margin-top: 2rem;
+}
+
+.cookie-modal_radio {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+}
+
+.cookie-modal_radio.is--not-allowed {
+  background-color: #f9fafb;
+}
+
+.cookie-modal_radio_button {
+  float: left;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  margin-right: 0.75rem;
+}
+
+.cookie-modal_radio_button.is-always-active {
+  background-color: #5a45ff;
+  border-color: #5a45ff;
+}
+
+.cookie-modal_radio_button.w--redirected-checked {
+  background-color: #5a45ff;
+  border-color: #5a45ff;
+}
+
+.cookie-modal_radio_label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.cookie-modal_radio_label.is--not-allowed {
+  color: #333;
+}
+
+.cookie-modal_radio_description {
+  font-size: 0.875rem;
+  color: rgba(51, 51, 51, 0.7);
+  padding-left: 2rem;
+}
+
+.cookie-modal_radio_description.is--not-allowed {
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.cookie-modal_button-wrap.in-pref-manger {
+  margin-top: 2rem;
+}
+
+.cookie-preference-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #5a45ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1050;
+  transition: transform 0.3s ease;
+}
+
+.cookie-preference-button:hover {
+  transform: scale(1.05);
+}
+
+.cookie-preference-button_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.cookie-preference-button_icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  filter: invert(1);
+}
+
+.w-form-done {
+  display: none;
+  padding: 20px;
+  text-align: center;
+  background-color: #dddddd;
+}
+
+.w-form-fail {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #ffdede;
+}
+
+/* Margins */
+.margin-top {
+  margin-top: 1rem;
+}
+
+.margin-xlarge {
+  margin-top: 3rem;
+}
+
+.margin-medium {
+  margin: 2rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Layout Grid */
+.w-layout-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: auto auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+/* Splide slider specific styles */
+.splide__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.splide__pagination li {
+  padding-left: 0 !important;
+  background-image: none !important;
+  border-radius: 1rem !important;
+}
+
+.splide__pagination__page {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  padding: 0;
+}
+
+.splide__pagination__page.is-active {
+  background-color: #5a45ff;
+}
+
+.splide__arrows {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.splide__arrow {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+/* Fix for large screens (wider than 1300px) */
+@media screen and (min-width: 1301px) {
+  .container-large {
+    max-width: 80rem;
+    padding-left: 1rem;
+    /* Reduced from 2rem */
+    padding-right: 1rem;
+    /* Reduced from 2rem */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-header_content-wrapper {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .section-platform-grid {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-header_image {
+    max-width: 100%;
+    width: auto;
+  }
+
+  .section-platform-image {
+    max-width: 100%;
+  }
+
+  /* Ensure proper centering of content */
+  .padding-global {
+    padding-left: max(3%, calc((100% - 1280px) / 2));
+    /* Reduced from 5% */
+    padding-right: max(3%, calc((100% - 1280px) / 2));
+    /* Reduced from 5% */
+  }
+}
+
+/* Fix for the splide__arrow class */
+.splide__arrow {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+/* Pricing Page Styles */
+.pricing-hero-section {
+  background-color: #f6f9fc;
+  padding: 6rem 0 3rem;
+  text-align: center;
+}
+
+.pricing-hero-content {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.pricing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem 0;
+  gap: 1rem;
+}
+
+.pricing-toggle-option {
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: rgba(51, 51, 51, 0.7);
+}
+
+.pricing-toggle-option.active {
+  color: #5a45ff;
+}
+
+.pricing-toggle-switch {
+  position: relative;
+  width: 3rem;
+  height: 1.5rem;
+  background-color: #5a45ff;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.pricing-toggle-switch::before {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 0.125rem;
+  left: 0.125rem;
+  transition: transform 0.3s;
+}
+
+.pricing-toggle-switch.yearly::before {
+  transform: translateX(1.5rem);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.pricing-card {
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.is-featured {
+  border: 2px solid #5a45ff;
+  z-index: 1;
+}
+
+.pricing-card-badge {
+  position: absolute;
+  top: 1rem;
+  right: -3rem;
+  background-color: #5a45ff;
+  color: white;
+  padding: 0.5rem 3rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transform: rotate(45deg);
+}
+
+.pricing-card-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.pricing-currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.pricing-amount {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #333;
+}
+
+.pricing-period {
+  font-size: 1rem;
+  color: rgba(51, 51, 51, 0.7);
+  margin-left: 0.25rem;
+}
+
+.pricing-features {
+  flex-grow: 1;
+  margin-bottom: 2rem;
+}
+
+.pricing-feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.pricing-feature-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.pricing-card-cta {
+  text-align: center;
+}
+
+.pricing-card-cta .button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  /* Pill shape */
+}
+
+.pricing-card.is-featured .button {
+  background-color: #347AE9;
+  /* Updated color */
+}
+
+.pricing-card:not(.is-featured) .button {
+  background-color: transparent;
+  border: 1px solid #347AE9;
+  /* Updated color */
+  color: #347AE9;
+  /* Updated color */
+}
+
+.pricing-card:not(.is-featured) .button:hover {
+  background-color: rgba(52, 122, 233, 0.05);
+  /* Updated color with opacity */
+}
+
+.pricing-faq-section {
+  background-color: #f6f9fc;
+  padding: 5rem 0;
+}
+
+.pricing-faq-list {
+  margin-top: 3rem;
+}
+
+.pricing-faq-item {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-faq-item:last-child {
+  border-bottom: none;
+}
+
+.pricing-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 0;
+}
+
+.pricing-faq-question .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.pricing-faq-question.active .icon {
+  transform: rotate(180deg);
+}
+
+.pricing-faq-answer {
+  padding-top: 1rem;
+}
+
+.pricing-guarantee {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.pricing-guarantee-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.pricing-guarantee-icon {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.pricing-comparison {
+  padding: 5rem 0;
+}
+
+.pricing-comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 3rem;
+}
+
+.pricing-comparison-table th,
+.pricing-comparison-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pricing-comparison-table th {
+  font-weight: 600;
+}
+
+.pricing-comparison-table td:first-child {
+  font-weight: 500;
+}
+
+.pricing-comparison-check {
+  color: #5a45ff;
+  font-weight: bold;
+}
+
+/* Responsive styles for pricing page */
+@media screen and (max-width: 991px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .pricing-card.is-featured {
+    order: -1;
+  }
+
+  .pricing-comparison-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Mobile Header - Fixed at top */
+.fixed {
+  position: fixed;
+}
+
+.top-0 {
+  top: 0;
+}
+
+.left-0 {
+  left: 0;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.h-14 {
+  height: 3.5rem;
+}
+
+.bg-\[#FFFEFB\] {
+  background-color: #FFFEFB;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.md\:hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .md\:hidden {
+    display: block;
+  }
+}
+
+.w-8 {
+  width: 2rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.bg-black {
+  background-color: black;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.mr-2 {
+  margin-right: 0.5rem;
+}
+
+.space-x-1>*+* {
+  margin-left: 0.25rem;
+}
+
+.w-1\.5 {
+  width: 0.375rem;
+}
+
+.h-1\.5 {
+  height: 0.375rem;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.rounded-full {
+  border-radius: 9999px;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-black {
+  color: black;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .section_home-header {
+    background-color: #FFFEFB !important;
+    padding-top: 80px !important;
+    /* Increased from 80px to bring closer to navbar */
+    padding-bottom: 32px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .padding-global {
+    padding: 12px 10px 0 10px !important;
+    /* Changed from 16px to 12px */
+    margin-bottom: 0 !important;
+  }
+
+  .container-large {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .home-header_content {
+    max-width: 100% !important;
+  }
+
+  .heading-style-h1 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 28px !important;
+    line-height: 32px !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: center !important;
+    margin-bottom: 20px !important;
+    /* Increased from 12px for more spacing */
+  }
+
+  .text-size-medium {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    color: rgb(18, 18, 18) !important;
+    max-width: 288px !important;
+    text-align: center !important;
+    margin: 0 auto 24px auto !important;
+    /* Increased from 16px for more spacing */
+  }
+
+  .button {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    color: #FFFFFF !important;
+    background-color: #347AE9 !important;
+    border-radius: 24px !important;
+    padding: 10px 20px !important;
+    margin-top: 8px !important;
+    margin-bottom: 28px !important;
+    /* Increased from 16px for more spacing to image */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+    height: auto !important;
+    min-width: auto !important;
+  }
+
+  .home-header_image {
+    width: 90% !important;
+    max-width: 324px !important;
+    border-radius: 8px !important;
+    margin-top: 28px !important;
+    /* Increased from 20px for more spacing from button */
+    transform: none !important;
+    opacity: 1 !important;
+  }
+
+  /* Mobile Header Adjustments */
+  .fixed .w-8 {
+    width: 2.5rem !important;
+  }
+
+  .fixed .h-6 {
+    height: 1.875rem !important;
+  }
+
+  .fixed .text-xl {
+    font-size: 1.375rem !important;
+    line-height: 1.875rem !important;
+  }
+
+  /* Much tighter section spacing on mobile - further reduced */
+  .section {
+    padding-top: 0.25rem !important;
+    /* Further reduced from 0.75rem */
+    padding-bottom: 0.25rem !important;
+    /* Further reduced from 0.75rem */
+  }
+
+  .padding-section-medium {
+    padding-top: 0.5rem !important;
+    /* Further reduced from 1rem */
+    padding-bottom: 0.5rem !important;
+    /* Further reduced from 1rem */
+  }
+
+  .padding-section-large {
+    padding-top: 0.75rem !important;
+    /* Further reduced from 1.5rem */
+    padding-bottom: 0.75rem !important;
+    /* Further reduced from 1.5rem */
+  }
+
+  .padding-section-small {
+    padding-top: 0.25rem !important;
+    /* Further reduced from 0.5rem */
+    padding-bottom: 0.25rem !important;
+    /* Further reduced from 0.5rem */
+  }
+}
+
+/* Mobile-only styles for Legal Glossary page */
+@media (max-width: 768px) {
+
+  /* Legal Glossary page - add significant spacing between navbar and hero section */
+  .section:first-child,
+  .section_hero,
+  section:first-of-type,
+  main section:first-child,
+  .main-wrapper section:first-child {
+    padding-top: 140px !important;
+    /* Increased from 120px to create even more significant spacing */
+  }
+
+  /* Additional targeting for any section that might be the first one */
+  body .section:first-of-type {
+    padding-top: 140px !important;
+  }
+
+  /* Target the legal glossary heading directly - using broad selectors that should catch it */
+  h1 {
+    font-family: "DM Serif Display", serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 32px !important;
+    line-height: 34px !important;
+  }
+
+  /* Override any conflicting styles */
+  .heading-style-h1 {
+    font-family: "DM Serif Display", serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 32px !important;
+    line-height: 34px !important;
+  }
+
+  /* Target by specific text content if possible */
+  
+  h1.demystified-fallback {
+    font-family: "DM Serif Display", serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 32px !important;
+    line-height: 34px !important;
+  }
+
+  /* Make the subtext smaller on Legal Glossary page */
+  p,
+  .text-size-medium {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+
+  /* CRITICAL: Fix horizontal scrolling on Legal Glossary cards */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .main-wrapper,
+  .section,
+  .padding-global,
+  .container-medium,
+  .container-large,
+  .container-small {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Legal Glossary cards - FORCE single column layout with more specific selectors */
+  .w-layout-grid,
+  div[class*="w-layout-grid"],
+  [class*="grid"],
+  .glossary-cards,
+  .cards-container,
+  .entries-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Additional override for any Webflow grid layouts */
+  body .w-layout-grid,
+  body div[class*="w-layout-grid"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    overflow-x: hidden !important;
+  }
+
+  /* CRITICAL: Override individual card styling to force full width and prevent horizontal overflow */
+  .w-layout-grid>div,
+  .w-layout-grid>*,
+  div[class*="w-layout-grid"]>div,
+  div[class*="w-layout-grid"]>* {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+
+  /* CRITICAL: Ensure glossary cards themselves don't cause horizontal overflow */
+  .glossary-card,
+  [class*="glossary-card"],
+  .entry-card,
+  [class*="entry-card"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 16px auto !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Mobile-only styles for Investment Readiness Checklist page */
+@media (max-width: 768px) {
+
+  /* Investment Readiness Checklist page - add extra space before footer */
+  .investment-readiness-page .main-wrapper {
+    margin-bottom: 80px !important;
+  }
+}
+
+/* Mobile-only styles for Due Diligence Checklist page */
+@media (max-width: 768px) {
+
+  /* Due Diligence Checklist page - hero section container */
+  .due-diligence-page .section_hero {
+    background-color: #FFFEFB !important;
+    padding: 100px 20px 32px 20px !important;
+    /* Increased top padding from 80px to 100px for more spacing from navbar */
+  }
+
+  /* Due Diligence Checklist page - hero section heading */
+  .due-diligence-page .section_hero h1 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 32px !important;
+    line-height: 34px !important;
+    text-align: center !important;
+    /* Changed from left to center alignment */
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+  }
+
+  /* Due Diligence Checklist page - hero section subtext */
+  .due-diligence-page .section_hero p {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    /* Changed from left to center alignment */
+    margin-bottom: 32px !important;
+    /* Increased spacing before image */
+    padding: 0 !important;
+  }
+
+  /* Due Diligence Checklist page - ensure consistent padding */
+  .due-diligence-page .section_hero .padding-global {
+    padding: 0 !important;
+  }
+
+  .due-diligence-page .section_hero .container-large {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Due Diligence Checklist page - move form image above form */
+  .due-diligence-page .section_investment-form {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+
+  .due-diligence-page .investment_form-component {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Move image above form content */
+  .due-diligence-page .investment_form-image-wrapper {
+    order: 1 !important;
+    margin-bottom: 32px !important;
+    /* Spacing between image and form */
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .due-diligence-page .investment_form-content {
+    order: 2 !important;
+  }
+
+  /* Style the image with rounded corners and proper sizing */
+  .due-diligence-page .investment_form-image {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+
+  /* Due Diligence Checklist page - form input fields */
+  .due-diligence-page .form_input {
+    border-radius: 8px !important;
+    /* Changed from pill shape to rectangular rounded corners */
+    text-align: left !important;
+    /* Left-align placeholder text */
+  }
+
+  /* Ensure the form inputs maintain their rectangular shape and left alignment */
+  .due-diligence-page .form_component .form_input {
+    border-radius: 8px !important;
+    text-align: left !important;
+  }
+
+  /* Due Diligence Checklist page - Explore our blog section only */
+  .due-diligence-page .section_blog {
+    padding: 20px !important;
+  }
+
+  /* Blog section header - heading and subtext container */
+  .due-diligence-page .section_blog .blog_header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+  }
+
+  /* Blog section heading - "Explore our blog" */
+  .due-diligence-page .section_blog .blog_header h2 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 40px !important;
+    line-height: 42px !important;
+    text-align: left !important;
+    margin: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Blog section subtext */
+  .due-diligence-page .section_blog .blog_header p {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    text-align: left !important;
+    margin: 0 !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Hide the original "View all" button in header */
+  .due-diligence-page .section_blog .blog_header a {
+    display: none !important;
+  }
+
+  /* Blog cards container - show only one blog */
+  .due-diligence-page .section_blog .blog_cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* Hide the second blog card on mobile */
+  .due-diligence-page .section_blog .blog_card:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Style the visible blog card */
+  .due-diligence-page .section_blog .blog_card:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Style the "Read more" button to be primary and adjust for side-by-side layout */
+  .due-diligence-page .section_blog .blog_card button {
+    width: calc(50% - 6px) !important;
+    max-width: none !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 1rem !important;
+    line-height: 1 !important;
+    background-color: #347AE9 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    margin: 0 !important;
+  }
+
+  /* Create a button container to hold both buttons side by side */
+  .due-diligence-page .section_blog .blog_card {
+    position: relative !important;
+  }
+
+  /* Add "View all" button next to "Read more" button using ::after pseudo-element */
+  .due-diligence-page .section_blog .blog_card::after {
+    content: "View all";
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: calc(50% - 6px) !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    line-height: 44px !important;
+    background-color: transparent !important;
+    color: #336DFF !important;
+    border: 2px solid #336DFF !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+  }
+
+  /* Ensure proper container styling for the blog section */
+  .due-diligence-page .section_blog .container-large,
+  .due-diligence-page .section_blog .padding-global {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Due Diligence Checklist page - add extra space before footer */
+  .due-diligence-page .main-wrapper {
+    margin-bottom: 80px !important;
+  }
+}
+
+/* Mobile-only styles for Partners Section */
+@media (max-width: 768px) {
+
+  /* Partners section heading - "We've helped great startups just like yours" */
+  .section h2,
+  .section .heading-style-h2,
+  .partners-section h2,
+  .partners-section .heading-style-h2 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 26px !important;
+    line-height: 29px !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: center !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Carousel logos under the partners section - updated sizing and spacing */
+  .logos-collection .startup-logo,
+  .logos-container .startup-logo,
+  .logos-wrapper .startup-logo {
+    max-height: 28px !important;
+    width: auto !important;
+    margin: 0 6px !important;
+  }
+
+  /* Additional targeting for logo images in the carousel */
+  .logos-marquee img,
+  .logos-collection img,
+  .logos-container img {
+    max-height: 28px !important;
+    width: auto !important;
+    margin: 0 6px !important;
+  }
+
+  /* Reduce vertical gap - move logos closer to heading */
+  .logos-marquee {
+    margin-top: 4px !important;
+  }
+
+  /* Ensure proper spacing in the logos container */
+  .logos-container {
+    gap: 12px !important;
+  }
+
+  /* Adjust logos wrapper padding for mobile */
+  .logos-wrapper {
+    padding: 0 6px !important;
+  }
+
+  /* Much tighter partners section padding - further reduced */
+  .partners-section,
+  .section:has(.partners-section) {
+    padding-top: 0.25rem !important;
+    /* Further reduced from 0.5rem */
+    padding-bottom: 0.25rem !important;
+    /* Further reduced from 0.5rem */
+  }
+}
+
+/* Mobile-only styles for "A smart legal platform, unlike anything else" section */
+@media (max-width: 768px) {
+
+  /* Smart Legal Platform section container */
+  .smart-legal-section,
+  .section-platform-grid .section-platform_content {
+    background-color: #FFFEFB !important;
+    padding: 4px 12px 0 12px !important;
+    /* Changed from 20px to 12px */
+  }
+
+  /* Smart Legal Platform heading - UPDATED FONT SIZE */
+  .smart-legal-section .heading,
+  .smart-legal-section .smart-legal-heading,
+  .section-platform-grid .smart-legal-heading {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 40px !important;
+    line-height: 42px !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: left !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Smart Legal Platform subtext */
+  .smart-legal-section .subtext,
+  .smart-legal-section .smart-legal-description,
+  .section-platform-grid .smart-legal-description {
+    font-family: "Opensans Regular", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: rgb(51, 51, 51) !important;
+    text-align: left !important;
+    max-width: 320px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Smart Legal Platform bullet list - COMPLETELY REMOVE ALL LIST STYLES */
+  .smart-legal-section ul.features,
+  .smart-legal-section .smart-legal-list,
+  .section-platform-grid .smart-legal-list,
+  .list_component {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+    list-style-position: outside !important;
+    padding: 0 !important;
+    margin: 0 0 4px 0 !important;
+    /* Further reduced spacing to buttons */
+    background: none !important;
+  }
+
+  .smart-legal-section ul.features li,
+  .smart-legal-section .smart-legal-list-item,
+  .section-platform-grid .smart-legal-list-item,
+  .list_item {
+    display: flex !important;
+    align-items: flex-start !important;
+    margin-bottom: 2px !important;
+    font-family: "Opensans Medium", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: left !important;
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+    position: relative !important;
+    padding-left: 0 !important;
+    background: none !important;
+  }
+
+  .smart-legal-section ul.features li:last-child,
+  .smart-legal-section .smart-legal-list-item:last-child,
+  .section-platform-grid .smart-legal-list-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* COMPLETELY OVERRIDE: Only one blue dot per item */
+  .smart-legal-section ul.features li::before,
+  .smart-legal-section .smart-legal-list-item::before,
+  .section-platform-grid .smart-legal-list-item::before,
+  .list_item::before {
+    content: '' !important;
+    width: 8px !important;
+    height: 8px !important;
+    background-color: #347AE9 !important;
+    background-image: none !important;
+    border-radius: 50% !important;
+    margin-top: 8px !important;
+    margin-right: 8px !important;
+    flex-shrink: 0 !important;
+    display: block !important;
+  }
+
+
+  /* Remove any other pseudo-elements that might create duplicate dots */
+  .smart-legal-section ul.features li::after,
+  .smart-legal-section .smart-legal-list-item::after,
+  .section-platform-grid .smart-legal-list-item::after,
+  .list_item::after {
+    display: none !important;
+  }
+
+  /* OVERRIDE any other list styling that might be inherited */
+  .smart-legal-section ul.features li::marker,
+  .smart-legal-section .smart-legal-list-item::marker,
+  .section-platform-grid .smart-legal-list-item::marker,
+  .list_item::marker {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* Smart Legal Platform buttons - FIXED BUTTON TEXT ALIGNMENT */
+  .smart-legal-section .button-primary,
+  .smart-legal-section .button-outline,
+  .smart-legal-section .smart-legal-buttons .button,
+  .smart-legal-section .smart-legal-buttons .button-secondary,
+  .section-platform-grid .smart-legal-buttons .button,
+  .section-platform-grid .smart-legal-buttons .button-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    line-height: 1 !important;
+  }
+
+  .smart-legal-section .button-primary,
+  .smart-legal-section .smart-legal-buttons .button,
+  .section-platform-grid .smart-legal-buttons .button {
+    background-color: #347AE9 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    margin-bottom: 20px !important;
+    /* Increased spacing between button and image */
+  }
+
+  .smart-legal-section .button-outline,
+  .smart-legal-section .smart-legal-buttons .button-secondary,
+  .section-platform-grid .smart-legal-buttons .button-secondary {
+    background-color: transparent !important;
+    color: #347AE9 !important;
+    border: 2px solid #347AE9 !important;
+    margin-bottom: 20px !important;
+    /* Increased spacing between button and image */
+  }
+
+  /* Smart Legal Platform button container */
+  .smart-legal-section .smart-legal-buttons,
+  .section-platform-grid .smart-legal-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+    /* Further reduced from 8px */
+  }
+
+  /* Smart Legal Platform image - REMOVE EXTRA FRAMES */
+  .smart-legal-section .preview-wrapper,
+  .smart-legal-section .section-platform-image,
+  .section-platform-grid .section-platform-image {
+    background-color: transparent !important;
+    /* REMOVED: Extra colored frame */
+    width: 100% !important;
+    max-width: 320px !important;
+    border-radius: 12px !important;
+    /* UPDATED: Direct border radius on container */
+    position: relative !important;
+    margin: 20px auto 0 auto !important;
+    padding: 0 !important;
+    /* REMOVED: Extra padding */
+    box-shadow: none !important;
+    overflow: hidden !important;
+  }
+
+  .smart-legal-section .preview-wrapper .main-card,
+  .smart-legal-section .section-platform-image img,
+  .section-platform-grid .section-platform-image img {
+    background-color: transparent !important;
+    /* REMOVED: Extra background */
+    border-radius: 12px !important;
+    /* UPDATED: Direct rounded corners */
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .smart-legal-section .preview-wrapper .chat-bubble {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    background-color: #FFFFFF !important;
+    border-radius: 8px !important;
+    padding: 8px !important;
+    width: 80px !important;
+    font-family: "Opensans Regular", sans-serif !important;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    color: rgb(18, 18, 18) !important;
+  }
+
+  .smart-legal-section .preview-wrapper .chat-bubble button {
+    margin-top: 4px !important;
+    background-color: #347AE9 !important;
+    color: #FFFFFF !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-size: 12px !important;
+    line-height: 14px !important;
+    padding: 4px 8px !important;
+    border: none !important;
+    border-radius: 6px !important;
+    display: block !important;
+  }
+
+  /* FIXED image position - image appears after buttons at the bottom */
+  .section-platform-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  .section-platform-grid-left {
+    order: 2 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .section-platform-grid-right {
+    order: 1 !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* Remove blue dots from glossary table of contents - GLOBAL OVERRIDE */
+.glossary-toc li::before {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  margin: 0 !important;
+}
+
+/* Also remove background-image bullets and extra padding from glossary TOC items */
+.glossary-toc li {
+  background-image: none !important;
+  background: none !important;
+  padding-left: 0 !important;
+}
+
+
+/* Mobile-only styles for "Support at each stage of your journey" section */
+@media (max-width: 768px) {
+
+  /* Support Journey section container - UPDATED BACKGROUND COLOR */
+  .journey-section-bg,
+  .section.journey-section-bg {
+    background-color: #F4EEE4 !important;
+    padding: 4px 12px 8px 12px !important;
+    /* Changed from 20px to 12px */
+  }
+
+  /* Support Journey section content wrapper */
+  .journey-section-bg .section-platform-grid,
+  .journey-section-bg .container-large,
+  .journey-section-bg .padding-global {
+    background-color: #F4EEE4 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Support Journey heading - MATCH OTHER SECTION HEADINGS WITH BACKGROUND */
+  .journey-section-bg .heading-style-h2,
+  .journey-section-bg h2,
+  .journey-section-bg .section-platform_content .heading-style-h2,
+  .journey-section-bg .section-platform_content h2 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 40px !important;
+    line-height: 42px !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: left !important;
+    margin-bottom: 4px !important;
+    background-color: #F4EEE4 !important;
+    padding: 0 !important;
+  }
+
+  /* Support Journey description - MATCH OTHER SECTION DESCRIPTIONS WITH BACKGROUND */
+  .journey-section-bg .text-size-medium,
+  .journey-section-bg p,
+  .journey-section-bg .section-platform_content .text-size-medium,
+  .journey-section-bg .section-platform_content p {
+    font-family: "Opensans Regular", sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: rgb(51, 51, 51) !important;
+    text-align: left !important;
+    max-width: 320px !important;
+    margin-bottom: 12px !important;
+    background-color: #F4EEE4 !important;
+    padding: 0 !important;
+  }
+
+  /* Support Journey buttons - MATCH OTHER SECTION BUTTONS */
+  .journey-section-bg .button,
+  .journey-section-bg .button-secondary {
+    width: 100% !important;
+    max-width: 320px !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto !important;
+    padding: 0 1rem !important;
+    line-height: 1 !important;
+  }
+
+  .journey-section-bg .button {
+    background-color: #347AE9 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    margin-bottom: 20px !important;
+    /* Increased spacing between button and video */
+  }
+
+  .journey-section-bg .button-secondary {
+    background-color: transparent !important;
+    color: #347AE9 !important;
+    border: 2px solid #347AE9 !important;
+    margin-bottom: 20px !important;
+    /* Increased spacing between button and video */
+  }
+
+  /* Support Journey button container */
+  .journey-section-bg .button-group {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-top: 12px !important;
+    margin-bottom: 4px !important;
+    /* Further reduced from 8px */
+  }
+
+  /* CRITICAL: Force video display for mobile with rounded corners */
+  .journey-section-bg video,
+  .journey-section-bg .section_platform-video video,
+  .journey-section-bg [data-w-id*="video"] video,
+  .journey-section-bg .w-background-video-atom video,
+  .journey-section-bg .w-background-video video {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    min-height: 180px !important;
+    margin: 20px auto 0 auto !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+}
+
+/* Mobile-only styles for Blog Page */
+@media (max-width: 768px) {
+
+  /* Blog page - add spacing between navbar and hero section */
+  .blog-page .section {
+    padding-top: 48px !important;
+    /* Increased from 32px to 48px for more spacing */
+  }
+
+  /* Blog page heading - updated typography */
+  .blog-page h1,
+  .blog-page .heading-style-h1 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 41px !important;
+    line-height: 43px !important;
+    text-align: left !important;
+    margin-bottom: 16px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Blog page subtext - updated typography */
+  .blog-page .text-size-medium,
+  .blog-page p {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    text-align: left !important;
+    margin-bottom: 24px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Blog cards container - show only one card */
+  .blog-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    padding: 0 20px !important;
+  }
+
+  /* Hide additional blog cards on mobile */
+  .blog-card.desktop-only {
+    display: none !important;
+  }
+
+  /* Individual blog cards */
+  .blog-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .blog-card img {
+    width: 100% !important;
+    border-radius: 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  .blog-card h3 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+
+  .blog-card p {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: rgb(18, 18, 18) !important;
+    text-align: left !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Blog page navbar adjustments */
+  .blog-page .navbar-container {
+    padding: 1rem 20px !important;
+  }
+
+  .blog-page .logo {
+    margin-left: 0 !important;
+  }
+
+  /* Add spacing between "Get your legals in order" section and footer */
+  .blog-page .section:last-of-type {
+    margin-bottom: 60px !important;
+    /* Increased from 40px for more spacing before footer */
+  }
+}
+
+/* Desktop-only styles for blog cards */
+@media (min-width: 769px) {
+  .blog-card.desktop-only {
+    display: flex !important;
+  }
+}
+
+/* Mobile-only styles for Investment Readiness Checklist page hero section */
+@media (max-width: 768px) {
+
+  /* Investment Readiness Checklist page - hero section container */
+  .investment-readiness-page .section_hero {
+    background-color: #FFFEFB !important;
+    padding: 100px 20px 32px 20px !important;
+    /* Increased top padding from 80px to 100px for more spacing from navbar */
+  }
+
+  /* Investment Readiness Checklist page - hero section heading */
+  .investment-readiness-page .section_hero h1 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 32px !important;
+    line-height: 34px !important;
+    text-align: center !important;
+    /* Changed from left to center alignment */
+    margin-bottom: 20px !important;
+    padding: 0 !important;
+  }
+
+  /* Investment Readiness Checklist page - hero section subtext */
+  .investment-readiness-page .section_hero p {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    text-align: center !important;
+    /* Changed from left to center alignment */
+    margin-bottom: 32px !important;
+    /* Increased spacing before image */
+    padding: 0 !important;
+  }
+
+  /* Investment Readiness Checklist page - ensure consistent padding */
+  .investment-readiness-page .section_hero .padding-global {
+    padding: 0 !important;
+  }
+
+  .investment-readiness-page .section_hero .container-large {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Investment Readiness Checklist page - move form image above form */
+  .investment-readiness-page .section_investment-form {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+
+  .investment-readiness-page .investment_form-component {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Move image above form content */
+  .investment-readiness-page .investment_form-image-wrapper {
+    order: 1 !important;
+    margin-bottom: 32px !important;
+    /* Spacing between image and form */
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .investment-readiness-page .investment_form-content {
+    order: 2 !important;
+  }
+
+  /* Style the image with rounded corners and proper sizing */
+  .investment-readiness-page .investment_form-image {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+
+  /* Investment Readiness Checklist page - form input fields */
+  .investment-readiness-page .form_input {
+    border-radius: 8px !important;
+    /* Changed from pill shape to rectangular rounded corners */
+    text-align: left !important;
+    /* Left-align placeholder text */
+  }
+
+  /* Ensure the form inputs maintain their rectangular shape and left alignment */
+  .investment-readiness-page .form_component .form_input {
+    border-radius: 8px !important;
+    text-align: left !important;
+  }
+
+  /* Investment Readiness Checklist page - Explore our blog section only */
+  .investment-readiness-page .section_blog {
+    padding: 20px !important;
+  }
+
+  /* Blog section header - heading and subtext container */
+  .investment-readiness-page .section_blog .blog_header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin-bottom: 24px !important;
+    padding: 0 !important;
+  }
+
+  /* Blog section heading - "Explore our blog" */
+  .investment-readiness-page .section_blog .blog_header h2 {
+    font-family: "Dmserifdisplay Regular", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 40px !important;
+    line-height: 42px !important;
+    text-align: left !important;
+    margin: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Blog section subtext */
+  .investment-readiness-page .section_blog .blog_header p {
+    font-family: "Opensans Medium", sans-serif !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    color: rgb(18, 18, 18) !important;
+    font-size: 16px !important;
+    line-height: 19px !important;
+    text-align: left !important;
+    margin: 0 !important;
+    margin-bottom: 24px !important;
+  }
+
+  /* Hide the original "View all" button in header */
+  .investment-readiness-page .section_blog .blog_header a {
+    display: none !important;
+  }
+
+  /* Blog cards container - show only one blog */
+  .investment-readiness-page .section_blog .blog_cards {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* Hide the second blog card on mobile */
+  .investment-readiness-page .section_blog .blog_card:nth-child(2) {
+    display: none !important;
+  }
+
+  /* Style the visible blog card */
+  .investment-readiness-page .section_blog .blog_card:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+
+  /* Style the "Read more" button to be primary and adjust for side-by-side layout */
+  .investment-readiness-page .section_blog .blog_card button {
+    width: calc(50% - 6px) !important;
+    max-width: none !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 1rem !important;
+    line-height: 1 !important;
+    background-color: #347AE9 !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    margin: 0 !important;
+  }
+
+  /* Create a button container to hold both buttons side by side */
+  .investment-readiness-page .section_blog .blog_card {
+    position: relative !important;
+  }
+
+  /* Add "View all" button next to "Read more" button using ::after pseudo-element */
+  .investment-readiness-page .section_blog .blog_card::after {
+    content: "View all";
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    width: calc(50% - 6px) !important;
+    height: 44px !important;
+    border-radius: 22px !important;
+    font-family: "Opensans SemiBold", sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    text-align: center !important;
+    line-height: 44px !important;
+    background-color: transparent !important;
+    color: #336DFF !important;
+    border: 2px solid #336DFF !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+  }
+
+  /* Ensure proper container styling for the blog section */
+  .investment-readiness-page .section_blog .container-large,
+  .investment-readiness-page .section_blog .padding-global {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* Investment Readiness Checklist page - add extra space before footer */
+  .investment-readiness-page .main-wrapper {
+    margin-bottom: 80px !important;
+  }
+}
+
+/* Mobile-only styles for Investment Readiness Checklist page - Explore our blog section */
+/* (No changes here, just to keep the structure consistent) */
+@media (max-width: 768px) {
+  /* Investment Readiness Checklist page - Explore our blog section only */
+  /* ... other styles as above ... */
+}
+
+@media (max-width: 768px) {
+  .heading-style-h1 {
+    font-size: 32px !important;
+    line-height: 36px !important;
+  }
+
+  .heading-style-h2 {
+    font-size: 28px !important;
+    line-height: 32px !important;
+  }
+
+  .heading-style-h3 {
+    font-size: 24px !important;
+    line-height: 28px !important;
+  }
+
+  .heading-style-h4 {
+    font-size: 20px !important;
+    line-height: 24px !important;
+  }
+
+  .heading-style-h5 {
+    font-size: 18px !important;
+    line-height: 22px !important;
+  }
+
+  .text-size-medium {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+
+  .text-size-small {
+    font-size: 14px !important;
+    line-height: 18px !important;
+  }
+
+  /* CRITICAL: Fix horizontal scrolling */
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .main-wrapper,
+  .section,
+  .padding-global,
+  .container-medium,
+  .container-large,
+  .container-small {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* CRITICAL: Legal Glossary specific grid fixes */
+  .legal-glossary_component,
+  .legal-glossary_grid,
+  .w-layout-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    gap: 20px !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Target all grid items within Legal Glossary */
+  .legal-glossary_component>*,
+  .legal-glossary_grid>*,
+  .w-layout-grid>* {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    flex: none !important;
+    grid-column: auto !important;
+  }
+
+  /* Ensure glossary cards stack properly */
+  .w-layout-grid .glossary-card,
+  .w-layout-grid [data-w-id] {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 16px 0 !important;
+    display: block !important;
+  }
+}
+
+.definitions-page td:first-child {
+  min-width: 300px;
+  font-weight: 600;
+  vertical-align: top;
+  padding-right: 1rem;
+  font-size: 16px;
+  padding-left: 30px;
+  /* text-align: center; */
+  /* centers the text inside td */
+  white-space: normal;
+}
+
+@media (max-width: 768px) {
+  .definitions-page td:first-child {
+    min-width: 0px !important
+  }
+}
+
+.definitions-page td {
+  font-size: 16px !important;
+  font-family: "Opensans Medium", sans-serif !important;
+  font-weight: 300 !important;
+}
+
+.definitions-page-2 td:first-child {
+  white-space: nowrap;
+  min-width: 100px;
+  /* adjust until all your terms fit in a single line */
+  font-weight: 600;
+  /* matches font-semibold */
+  vertical-align: top;
+  /* same as align-top */
+  padding-right: 1rem;
+  /* same as pr-4 */
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.definitions-page-2 td ul li {
+  font-size: 16px !important;
+  font-family: "Opensans Medium", sans-serif !important;
+  font-weight: 300;
+}
+
+.definitions-page-2 td {
+  font-size: 16px !important;
+  font-family: "Opensans Medium", sans-serif !important;
+  font-weight: 300 !important;
+}
+
+@media (max-width: 768px) {
+  .ltc-hero-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  .ltc-hero-image-col {
+    display: none !important;
+  }
+}
+
+/* Policy page overrides - neutralize webflow styles completely */
+.policy-content {
+  font-family: inherit !important;
+  color: inherit !important;
+}
+
+.policy-content * {
+  box-sizing: border-box !important;
+}
+
+.policy-content h1 {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 1.875rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: normal !important;
+  text-align: center !important;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
+}
+
+.policy-content h2 {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  letter-spacing: normal !important;
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.policy-content h3 {
+  font-family: 'DM Serif Display', serif !important;
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  letter-spacing: normal !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.policy-content p {
+  margin-top: 0 !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.7 !important;
+  display: block !important;
+}
+
+.policy-content .prose {
+  max-width: none !important;
+  font-size: 1.125rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Force Tailwind spacing utilities inside policy content */
+.policy-content .mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.policy-content .mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+.policy-content .mb-8 {
+  margin-bottom: 2rem !important;
+}
+
+.policy-content .mt-8 {
+  margin-top: 2rem !important;
+}
+
+.policy-content .ml-6 {
+  margin-left: 1.5rem !important;
+}
+
+.policy-content .space-y-2 > * + * {
+  margin-top: 0.5rem !important;
+}
+
+.policy-content .space-y-1 > * + * {
+  margin-top: 0.25rem !important;
+}
+
+.policy-content ul,
+.policy-content ol {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  padding-left: 2rem !important;
+  display: block !important;
+}
+
+.policy-content li {
+  margin-bottom: 0.5rem !important;
+  display: list-item !important;
+  line-height: 1.7 !important;
+}
+
+.policy-content ul li {
+  list-style-type: disc !important;
+}
+
+.policy-content ol li {
+  list-style-type: decimal !important;
+}
+
+.policy-content a {
+  text-decoration: underline !important;
+}
+
+.policy-content strong {
+  font-weight: 700 !important;
+}
+
+/* Legal-document hanging indents: number sits in the left column,
+   wrapped text aligns under the body rather than the number. */
+.policy-content .clause,
+.policy-content .clause-letter,
+.policy-content .clause-disclaimer {
+  display: grid !important;
+  grid-template-columns: 3rem 1fr !important;
+  column-gap: 0.5rem !important;
+  align-items: start !important;
+}
+
+.policy-content .ml-6 .clause {
+  grid-template-columns: 3.25rem 1fr !important;
+}
+
+.policy-content .ml-6 .ml-6 .clause,
+.policy-content .ml-12 .clause,
+.policy-content .clause-letter {
+  grid-template-columns: 2rem 1fr !important;
+}
+
+.policy-content .clause-disclaimer {
+  grid-template-columns: 2.25rem 1fr !important;
+}
+
+.policy-content .clause > .num,
+.policy-content .clause-letter > .num,
+.policy-content .clause-disclaimer > .num {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.policy-content table {
+  border-collapse: collapse !important;
+  width: 100% !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.policy-content th,
+.policy-content td {
+  border: 1px solid #e5e5e5 !important;
+  padding: 0.75rem !important;
+  text-align: left !important;
+}
+
+.policy-content thead tr {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}

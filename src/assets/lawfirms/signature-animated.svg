@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 90" width="640" height="90" role="img" aria-label="Animated signature">
+  <title>Animated signature</title>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .signature {
+        fill: none;
+        stroke: #1A1A1A;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 900;
+        animation: draw 5.5s ease-in-out infinite;
+      }
+      @keyframes draw {
+        0%   { stroke-dashoffset: 900; }
+        55%  { stroke-dashoffset: 0; }
+        88%  { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 900; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .signature {
+          animation: none;
+          stroke-dashoffset: 0;
+        }
+      }
+    ]]></style>
+  </defs>
+  <path class="signature" d="M 40 60 C 48 22, 78 22, 88 58 C 92 78, 76 86, 70 74 C 66 64, 78 56, 92 62 C 110 70, 122 50, 138 60 C 154 72, 168 50, 184 62 C 200 74, 214 50, 230 62 C 246 72, 258 56, 268 64 L 280 60 M 308 58 C 320 42, 342 46, 348 64 C 352 80, 336 86, 332 74 C 328 64, 342 58, 354 62 C 372 70, 386 52, 398 62 C 412 74, 426 52, 442 64 C 458 76, 472 56, 484 64 C 498 72, 514 60, 528 66 L 562 64 L 596 68"/>
+</svg>
