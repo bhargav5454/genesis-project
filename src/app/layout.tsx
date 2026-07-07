@@ -28,13 +28,6 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.__vite_plugin_react_preamble_installed__ = true;`,
-          }}
-        />
-      </head>
       <body suppressHydrationWarning>
         <ScrollToTop />
         {children}
